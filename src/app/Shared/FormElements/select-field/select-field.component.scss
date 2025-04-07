@@ -1,0 +1,78 @@
+@import '../../../../styles.scss';
+
+.input-icon-wrapper {
+    @include flex-properties(flex,flex-start,center);
+    background-color: #f7f9fc;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 100%;
+    position: relative;
+  
+    i {
+      font-size: 1rem;
+      color: #2196f3;
+      @include position-properties(absolute, null, null, 13px, 12px)
+    }
+
+    p-dropdown{
+        width: 100%;
+    }
+  
+    ::ng-deep .custom-dropdown {
+        width: 100%;
+        border: none !important;
+        background: transparent;
+        @include padding-properties(12px 0px 12px 2rem, false);
+
+        .p-dropdown-panel {
+            display: none !important;
+          }
+          
+      
+        .p-dropdown-label {
+          font-size: 14px;
+          padding-left: 0.5rem;
+          color: #333;
+        }
+      
+        .p-dropdown-trigger {
+          color: #2196f3;
+        }
+      
+        .p-dropdown-panel {
+          z-index: 1000 !important;
+        }
+      }
+      
+  }
+
+.options{
+    @include flex-properties(flex, flex-start, flex-start);
+    @include flex-direction(column);
+    // position: relative;
+
+    i{
+        @include margin-properties(auto 12px, inline);
+        cursor: pointer;
+    }
+    
+    .option{
+        @include padding-properties(12px, false);
+        width: 100%;
+
+        &:hover {
+            background-color: $primary;
+            color: $white;
+            cursor: pointer;
+          }
+    }
+
+    .active{
+        background-color: $primary;
+        color: $white;
+        cursor: pointer;
+    }
+}
+
+  
+  

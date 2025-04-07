@@ -1,0 +1,85 @@
+
+$black41:#414141;
+$black014:#00000014;
+$gray97: #979797;
+$black44: #444444;
+$gray99: #999999;
+$grayDD: #dddddd;
+$grayF5: #f5f5f5;
+$grayF1: #f1f1f1;
+$red: #ee0000;
+$greenEE: #daf4ee;
+$greenF3: #e7f8f3;
+$green68: #0bb68b;
+$yellow: #ffbb00;
+$floral-white: #fffae9;
+$old-lace: #fff7e6;
+$black1F: #231f1f;
+$black4C: #4c4c4c;
+$floral-white2:#FFFAEB;
+$grayFA:#FAFAFA;
+$peach:#FFF6DD;
+$gray76:#767676;
+$white2:#FFFBEE;
+$black01F:#0000001F;
+$green86:#0BB86B;
+$yellow08: #F5B708;
+$green66: #66D19E;
+$greenE8: #D9F6E8;
+$grayD9:#D9D9D9;
+$grayC:#ccc;
+$greenA5: #00AA55;
+$light-yellow: #FFF5D8;
+$greyBB: #BBBBBB;
+
+
+$primary: #1DA1F2;
+$white: #ffffff;
+$grayF2: #F2F2F2;
+$grayF0: #F0F0F0;
+$black00: #000000;
+$grayEa: #eaeaea;
+$gray94 : #949C9E;
+$black32: #323238;
+$blueED : #EDF8FF;
+
+:root {
+  
+  --black014:#{$black014};
+  --black44: #{$black44};
+  --gray97: #{$gray97};
+  --gray99: #{$gray99};
+  --grayDD: #{$grayDD};
+  --grayF5: #{$grayF5};
+  --grayF1: #{$grayF1};
+  --red: #{$red};
+  --greenEE: #{$greenEE};
+  --greenF3: #{$greenF3};
+  --green68: #{$green68};
+  --yellow: #{$yellow};
+  --floral-white: #{$floral-white};
+  --old-lace: #{$old-lace};
+  --black1F: #{$black1F};
+  --black4C: #{$black4C};
+  --floral-white2: #{$floral-white2};
+  --grayFA: #($grayFA);
+  --green86:#($green86)
+  --black01F:#($black01F)
+  --white2:#($white2)
+  --gray76:#($gray76)
+  --peach:#($peach)
+  --grayC:#($grayC);
+  --light-yellow: #{$light-yellow};
+  --greyBB: #{$greyBB};
+
+  // 
+  --primary-color: #{$primary};
+  --white: #{$white};
+  --grayF2: #{$grayF2};
+  --grayF0: #{$grayF0};
+  --black00: #{$black00};
+  --GrayEa: #{$grayEa};
+  --gray94: #{$gray94};
+  --black32: #{black32};
+  --blueED: #{blueED};
+}

@@ -1,0 +1,46 @@
+<div class="employee-list">
+      <ng-container *ngFor="let key of objectKeys(employees())">
+        <!-- Dynamic section title -->
+        <h3 class="employee-list-name" *ngIf="employees()[key].length">
+          {{ key === 'current' ? 'Current Employees' : 'Previous Employees' }}
+        </h3>
+  
+        <!-- Employee list category-wise -->
+        <div class="employee-list-details" *ngIf="employees()[key].length">
+          <div
+            class="detail"
+            *ngFor="let emp of employees()[key]; trackBy: trackByEmployeeId"
+          >
+            <div class="item">
+              <h4>{{ emp.name }}</h4>
+              <p>{{ emp.role?.label || emp.role }}</p>
+  
+              <div class="item-dates">
+                <p>{{ emp.joinDate | date: 'd MMM y' }}</p>
+                <p *ngIf="key === 'previous'"> - {{ emp.leftDate | date: 'd MMM y' }}</p>
+              </div>
+            </div>
+  
+            <div class="btn">
+              <i class="pi pi-file-edit edit-icon" (click)="editEmployee(emp)"></i>
+              <button class="delete-btn" (click)="deleteEmployee(emp, key)">Delete</button>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+  
+      <!-- Add employee details button -->
+      <button type="button" class="employee-list-add" (click)="redirection()">
+        <i class="pi pi-plus"></i>
+      </button>
+    
+      <!-- Empty state image -->
+        <div *ngIf="!employees()['current'].length && !employees()['previous'].length" class="employee-list-img">
+            <img
+              src="https://i.ibb.co/DfRhhTn0/Frame-19726.png"
+              alt="No employees found"
+            />
+          </div>
+    
+  </div>
+  

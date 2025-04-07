@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+@import './app/styles/color';
+@import './app/styles/design';
+@import './app/styles/flex';
+@import './app/styles/mediaOrientation';
+@import './app/styles/common-styles.scss';
+
+body {
+  margin: 0;
+  font-family: Mulish, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+::-webkit-scrollbar,body::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  
+  ::-webkit-scrollbar-track,body::-webkit-scrollbar-track {
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    border-radius: 100vh;
+    background: #F5F5F5;
+  }
+  
+  ::-webkit-scrollbar-thumb,body::-webkit-scrollbar-thumb {
+    background: #999999;
+    border-radius: 100vh;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover,body::-webkit-scrollbar-thumb:hover {
+    background: #828282;
+  }
+  

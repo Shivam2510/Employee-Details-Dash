@@ -1,0 +1,123 @@
+@import '../../../styles.scss';
+
+// common mixin
+@mixin flex-direction-column{
+    @include flex-properties(flex, flex-start, flex-start);
+    @include flex-direction(column);
+}
+
+.employee-list{
+    // @include padding-properties(12px 16px, false);
+    // @include padding-properties(12px 16px, false);
+    @include margin-properties(1rem auto, false);
+    @include container-properties($white, 1rem, null, 0 2px 10px #0000001f);
+    width: 40vw;
+    overflow: hidden;
+    position: relative;
+
+     // mobile device
+     @include mediaQuery(xsmobile, smobile, mobile) {
+        width: 100%;
+        @include margin-properties(0px, false);
+        @include container-properties($white, 0px, null, 0 2px 10px #0000001f);
+    }
+
+    &-name{
+        @include text-properties(16px, 600, $primary);
+        @include padding-properties(14px 16px, false);
+        @include container-properties($grayEa);
+        
+    }
+
+    &-details{
+        @include flex-direction-column;
+        
+        
+        .detail{
+            @include flex-properties(flex, space-between, center);
+            @include flex-direction(row);
+            @include padding-properties(14px 16px, false);
+            border-bottom: 1px solid $grayEa;
+            width: 100%;
+            // cursor: pointer;
+
+            .item{
+                @include flex-direction-column;
+                flex: auto;
+                gap: 4px;
+                h4{
+                    @include text-properties(16px, 500, $black32);
+                }
+    
+                p{
+                    @include text-properties(14px, 400, $gray94);
+                }
+    
+                &-dates{
+                    @include flex-properties(flex, flex-start, flex-start);
+                    gap: 4px;
+                    p{
+                        @include text-properties(14px, 400, $gray94);
+                    }
+                }
+            }
+
+            .btn{
+                @include flex-properties(flex, flex-start, center);
+                gap: 8px;
+
+                .pi-file-edit{
+                    @include text-properties(20px, 500, $primary);
+                    cursor: pointer;
+                    
+                }
+
+                .delete-btn {
+                    background-color: $primary;
+                    color: white;
+                    border: none;
+                    padding: 0.5rem 1rem;
+                    margin-left: auto;
+                    cursor: pointer;
+                  }
+            }
+        }
+    }
+
+    // add btn
+    &-add{
+        @include container-properties($primary, 50%, none);
+        @include padding-properties(8px 10px, false);
+        @include position-properties(absolute, null, 0px, 0px);
+        cursor: pointer;
+
+        i{
+            @include text-properties(12px, 600, $white)
+        }
+    }
+
+    // img
+    &-img{
+        @include flex-properties(flex, center, flex-start)
+    }
+}
+  
+  
+
+//headings and text
+// @mixin text-properties($size:null,$font-weight:null,$color:null,$style:null,$align:null,$line-height:null){
+//     @include font-size($size);
+//     @include font-weight($font-weight);
+//     @include text-color($color);
+//     font-style: $style;
+//     line-height: $line-height;
+//     @include text-align($align);
+//  }
+
+ //option containing boxes
+//  @mixin container-properties($bg-color:nulll,$radius:null, $border:nul,$box-show){
+//     border-radius: $radius;
+//     border: $border;
+//     box-shadow: $box-show;
+//     @include background-color($bg-color);
+//  }

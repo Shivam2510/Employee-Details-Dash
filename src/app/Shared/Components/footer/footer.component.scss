@@ -1,0 +1,41 @@
+@import "../../../../styles.scss";
+
+.footer{
+    @include flex-properties(flex, space-between, center);
+    @include padding-properties(16px 12px, false);
+    @include container-properties($white, 8px);
+    border: 4px solid $grayF2;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+    &-buttons{
+        @include flex-properties(flex, flex-start, center);
+        gap: 8px;
+
+        button{
+            @include padding-properties(0.6rem, false);
+            @include container-properties($grayF0, 6px, none);
+            color: $primary;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        
+            &:hover {
+              background-color: $primary;
+              color: $white;
+            }
+        }
+
+        // save button
+        .save{
+            background-color: $primary;
+            color: $white;
+        }
+
+        // diabled
+        .disabled{
+            cursor: not-allowed;
+        }
+    }
+}

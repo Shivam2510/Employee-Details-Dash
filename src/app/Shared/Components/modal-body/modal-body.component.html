@@ -1,0 +1,22 @@
+<!-- <p-dialog [(visible)]="visible" [modal]="visible" [closable]="false"  [style]="customStyle" class="custom-modal">
+    <ng-content></ng-content>
+ </p-dialog>
+   -->
+
+
+   <ng-container>
+    <p-dialog
+      [(visible)]="visible"
+      position = 'center'
+      [dismissableMask]="dismissableMask"
+      [closable]="closable"
+      [modal]="modal"
+      [style]="customStyle"
+      [transitionOptions]="'0ms'"
+      [styleClass]="customStyleClass"
+    >
+
+      <ng-content></ng-content>
+      
+    </p-dialog>
+  </ng-container>

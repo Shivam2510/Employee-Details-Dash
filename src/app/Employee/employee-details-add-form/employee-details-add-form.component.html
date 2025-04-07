@@ -1,0 +1,37 @@
+<div class="add-employee">
+
+   <!-- img -->
+   <div class="add-employee-img">
+    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Employee" />
+   </div>
+
+  <!-- form -->
+  <div class="add-employee-form">
+
+    <form [formGroup]="form">
+
+      <!-- name field -->
+      <app-input-field formControlName="name" placeholder="Enter name" icon="pi-user" appOnlyLetters>
+      </app-input-field>
+
+      <!-- select field -->
+      <app-select-field formControlName="role" icon="pi-map-marker" placeholder="Select a role" [options]="roles">
+      </app-select-field>
+
+      <div class="date-field">
+        <!-- date field -->
+        <app-custom-date-picker formControlName="joinDate" icon="pi-calendar" placeholder="Today">
+        </app-custom-date-picker>
+
+        <!-- date field -->
+        <app-custom-date-picker formControlName="leftDate" icon="pi-calendar" placeholder="No Date">
+        </app-custom-date-picker>
+      </div>
+
+    </form>
+  </div>
+
+</div>
+
+
+<footer [disabled]="form.invalid" (save)="saveData()" (cancel)="redirection()"></footer>

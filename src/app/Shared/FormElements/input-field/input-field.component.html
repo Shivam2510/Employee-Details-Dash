@@ -1,0 +1,13 @@
+<div class="input-icon-wrapper">
+    <i class="pi" [ngClass]="icon"></i>
+    <input
+      pInputText
+      type="text"
+      [value]="value()"
+      (input)="handleInput($event)"
+      (blur)="onTouched()"
+      [placeholder]="placeholder"
+      [disabled]="disabled" />
+  </div>
+  
+  

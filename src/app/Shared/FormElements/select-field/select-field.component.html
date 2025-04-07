@@ -1,0 +1,34 @@
+<div class="input-icon-wrapper">
+    <i class="pi" [ngClass]="icon"></i>
+  
+    <p-dropdown
+      [options]="options"
+      [placeholder]="placeholder"
+      [disabled]="disabled"
+      [ngModel]="selectedValue()"
+      (ngModelChange)="onModelChange($event)"
+      (onBlur)="onTouched()"
+      (onClick)="dropDownClick()"
+      styleClass="custom-dropdown"
+    >
+    </p-dropdown>
+  </div>
+  
+  <!-- Modal -->
+  <app-modal-body
+    [(visible)]="showModal"
+    customStyleClass="modal-body responsive-modal"
+  >
+    <div class="options">
+      <i class="pi pi-times" (click)="showModal = false"></i>
+      <div
+        class="option"
+        *ngFor="let option of options; trackBy: trackByOption"
+        [ngClass]="{ active: option === selectedValue() }"
+        (click)="onSelectChange({ value: option })"
+      >
+        {{ option }}
+      </div>
+    </div>
+  </app-modal-body>
+  

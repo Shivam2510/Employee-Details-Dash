@@ -1,0 +1,49 @@
+@import '../../../styles.scss';
+
+.add-employee{
+    // @include flex-properties(flex, flex-start, flex-start);
+    @include padding-properties(12px 16px, false);
+    @include margin-properties(1rem auto, false);
+    width: 40vw;
+
+    // mobile device
+    @include mediaQuery(xsmobile, smobile, mobile) {
+        width: 100%;
+    }
+    // gap: 6rem;
+
+    // > *{
+    //     @include flex-properties(flex, flex-start, center);
+    //     width: 100%;
+    //     flex: auto;
+    // }
+
+    &-form{
+        form{
+            @include flex-properties(flex, flex-start, flex-start);
+            flex-direction: column;
+            gap: 16px;
+            width: 100%;
+
+            > * {
+                width: 100%;
+            }
+
+            .date-field{
+                @extend form;
+            }
+        }
+    }
+
+    &-img{
+        text-align: center;
+        img{
+            height: 40vh;
+        }
+
+        // mobile device
+        @include mediaQuery(xsmobile, smobile, mobile) {
+            display: none;
+        }
+    }
+}

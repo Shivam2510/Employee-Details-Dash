@@ -1,0 +1,24 @@
+
+@mixin flex-properties($flex:null,$justify-content:null,$align-items:null){
+    display: $flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+
+@mixin flex-direction($direction){
+    flex-direction:$direction;
+}
+
+@mixin flex-wrap($wrap){
+    flex-wrap:$wrap;
+}
+
+@mixin align-self($self){
+    align-self: $self;
+}
+
+@mixin gap-properties($gap){
+    gap: $gap;
+}
+

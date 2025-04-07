@@ -1,0 +1,15 @@
+@import "../../../../styles.scss";
+
+// header section css
+.header-section{
+    background-color: $primary;
+    @include padding-properties(16px, false);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+
+    &-title{
+        @include text-properties(16px, 600, $white);
+    }
+}

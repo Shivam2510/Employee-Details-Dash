@@ -1,0 +1,32 @@
+::ng-deep .custom-modal,
+::ng-deep .modal-body.p-dialog,
+::ng-deep .insurer-modal.p-dialog {
+  border-radius: 24px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 2rem 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+
+  .p-dialog-header {
+    display: none;
+  }
+
+  .p-dialog-content {
+    // // padding: 2rem !important;
+    // border-radius: 24px;
+    // overflow: hidden;
+    // box-shadow: 0px -1px 20px 0px rgba(0, 0, 0, 0.08);
+  }
+}
+
+// ::ng-deep .p-component {
+//   font-family: 'Mulish' !important;
+// }
+
+@media only screen and (max-width: 768px) {
+  ::ng-deep .modal-body.p-dialog .p-dialog-content,
+  ::ng-deep .insurer-modal.p-dialog .p-dialog-content {
+    border-radius: 30px 30px 0px 0px;
+  }
+}

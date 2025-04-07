@@ -1,0 +1,9 @@
+<div class="footer">
+    <div class="selected-date">
+      <!-- 📅 {{ selectedDate ? (selectedDate | date: 'd MMM y') : 'No date selected' }} -->
+    </div>
+    <div class="footer-buttons">
+      <button class="cancel" (click)="cancel.emit()">Cancel</button>
+      <button class="save" [ngClass]="{'disabled': disabled}" [disabled]="disabled" (click)="save.emit()">Save</button>
+    </div>
+</div>

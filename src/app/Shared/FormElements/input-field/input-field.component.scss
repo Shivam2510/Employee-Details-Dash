@@ -1,0 +1,33 @@
+@import '../../../../styles.scss';
+
+.input-icon-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #f7f9fc;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 100%;
+    position: relative;
+  
+    i {
+      font-size: 1rem;
+      color: #2196f3;
+      @include position-properties(absolute, null, null, 13px,12px);
+    }
+  
+    input {
+      flex: 1;
+      border: none;
+      background: transparent;
+      outline: none;
+      font-size: 14px;
+      @include padding-properties(12px 2.5rem, false);
+
+      &::placeholder{
+        color: #333;
+      }
+
+    }
+  }
+  

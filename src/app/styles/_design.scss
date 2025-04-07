@@ -1,0 +1,82 @@
+@import 'color';
+//headings and text
+@mixin text-properties($size:null,$font-weight:null,$color:null,$style:null,$align:null,$line-height:null){
+    @include font-size($size);
+    @include font-weight($font-weight);
+    @include text-color($color);
+    font-style: $style;
+    line-height: $line-height;
+    @include text-align($align);
+ }
+
+ //option containing boxes
+ @mixin container-properties($bg-color:nulll,$radius:null, $border:nul,$box-show:null){
+    border-radius: $radius;
+    border: $border;
+    box-shadow: $box-show;
+    @include background-color($bg-color);
+ }
+
+ @mixin font-weight($weight){
+   font-weight:$weight;
+ }
+
+ @mixin text-align($align){
+   text-align: $align;
+ }
+
+ @mixin font-size($size){
+   font-size: $size;
+ }
+
+ @mixin background-color($bg-color){
+    background-color: $bg-color;
+ }
+
+ @mixin box-shadow($shadow){
+   box-shadow: $shadow;
+ }
+
+ @mixin text-color($color){
+   color:$color;
+ }
+ @mixin margin-properties($margin, $property) {
+  @if $property {
+      margin-#{$property}: $margin;
+  }@else{
+      margin: $margin;  
+  }
+}
+
+@mixin padding-properties($padding, $property) {
+  @if $property {
+      padding-#{$property}: $padding;
+  }@else{
+      padding: $padding;  
+  }
+}
+ 
+ @mixin button($size,$weight,$color,$align,$bg-color,$border,$radius,$padding,$width){
+  @include font-size($size);
+  @include font-weight($weight);
+  @include text-color($color);
+  @include text-align($align);
+  @include background-color($bg-color);
+  border:$border;
+  border-radius: $radius;
+  padding: $padding;
+  width:$width;
+}
+
+// position absolute and its coordinats
+@mixin position-properties($position:null,$top:null,$right:null,$bottom:null,$left:null){
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin border($border){
+  border: $border;
+}

@@ -1,0 +1,49 @@
+/****  comman breakpoints for devices  ****/
+$extra-sm-screen: 320px;
+$sm-screen: 567px;
+$md-screen: 768px;
+$lg-screen: 1023px;
+
+/*** media orientation ***/
+@mixin orientation($orientationType) {
+    @if $orientationType {
+        @media only screen and (orientation:#{$orientationType}) {
+            @content;
+        }
+    }
+}
+
+/** media query **/
+@mixin mediaQuery($types...) {
+    @each $type in $types {
+        @if $type == xsmobile {
+            @media only screen and (max-width: $extra-sm-screen) {
+                @content;
+            }
+        }
+
+        @if $type == smobile {
+            @media only screen and (min-width: $extra-sm-screen + 1) and (max-width: $sm-screen) {
+                @content;
+            }
+        }
+
+        @if $type == mobile {
+            @media only screen and (min-width: $sm-screen + 1) and (max-width: $md-screen) {
+                @content;
+            }
+        }
+
+        @if $type == tablet {
+            @media only screen and (min-width: $md-screen + 1) and (max-width: $lg-screen) {
+                @content;
+            }
+        }
+
+        @if $type == desktop {
+            @media only screen and (min-width: $lg-screen + 1) {
+                @content;
+            }
+        }
+    }
+}

@@ -1,0 +1,41 @@
+
+
+<div class="input-icon-wrapper">
+  <i class="pi" [ngClass]="icon"></i>
+  <input
+    type="text"
+    readonly
+    [placeholder]="placeholder"
+    [value]="selectedDate ? (selectedDate | date: 'dd MMM y') : ''"
+    (click)="openModal()"
+    class="date-input" />
+</div>
+
+<!-- modaly body -->
+<app-modal-body [(visible)]="showModal" customStyleClass="modal-body responsive-modal">
+  <!-- Your content goes here -->
+  <div class="modal-content">
+    <div class="quick-buttons">
+      <button (click)="setQuickDate('today')">Today</button>
+      <button (click)="setQuickDate('nextMonday')">Next Monday</button>
+      <button (click)="setQuickDate('nextTuesday')">Next Tuesday</button>
+      <button (click)="setQuickDate('nextWeek')">After 1 Week</button>
+    </div>
+
+    <div class="shivam">
+      <p-calendar [(ngModel)]="selectedDate" [inline]="true" dateFormat="dd M yy"></p-calendar>
+    </div>
+
+    <div class="footer">
+      <div class="selected-date">
+        📅 {{ selectedDate ? (selectedDate | date: 'd MMM y') : 'No date selected' }}
+      </div>
+      <div class="footer-buttons">
+        <button class="cancel" (click)="closeModal()">Cancel</button>
+        <button class="save" [disabled]="!selectedDate" (click)="saveDate()">Save</button>
+      </div>
+    </div>
+
+  </div>
+</app-modal-body>
+

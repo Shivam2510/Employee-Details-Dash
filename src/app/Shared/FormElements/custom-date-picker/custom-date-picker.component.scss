@@ -1,0 +1,277 @@
+
+@import '../../../../styles.scss';
+
+.date-input {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #fff;
+  transition: border-color 0.2s;
+
+  &:hover {
+    border-color: #007bff;
+  }
+}
+
+
+.input-icon-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #f7f9fc;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 100%;
+    position: relative;
+  
+    i {
+      font-size: 1rem;
+      color: #2196f3;
+      @include position-properties(absolute, null, null, 13px,12px);
+    }
+  
+    input {
+      flex: 1;
+      border: none;
+      background: transparent;
+      outline: none;
+      font-size: 14px;
+      @include padding-properties(12px 2.5rem, false);
+
+      &::placeholder{
+        color: #333;
+      }
+
+    }
+  }
+
+/* Quick Select Buttons */
+.quick-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+
+  button {
+    padding: 0.6rem;
+    background-color: $blueED;
+    color: $primary;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: $primary;
+      color: $white;
+    }
+  }
+}
+
+// /* Calendar Wrapper */
+// .shivam {
+//   display: flex;
+//   justify-content: center;
+//   margin-bottom: 1rem;
+
+//   > * {
+//     width: 100%;
+//   }
+
+//   ::ng-deep .p-calendar {
+//     width: 100%;
+
+//     .p-datepicker {
+//       border: none;
+//       box-shadow: none;
+//     }
+
+//     .p-datepicker-calendar {
+//       td {
+//         // padding: 0.5rem;
+//         // @include flex-properties(flex, center, center);
+
+//         span {
+//           display: block;
+//           width: 2.2rem;
+//           height: 2.2rem;
+//           line-height: 2.2rem;
+//           border-radius: 50%;
+//           text-align: center;
+//           transition: background-color 0.3s ease;
+
+//           &:hover {
+//             background-color: #d3e5ff;
+//           }
+//         }
+
+//         &.p-datepicker-today span {
+//           font-weight: bold;
+//           border: 1px solid #007bff;
+//         }
+
+//         &.p-highlight span {
+//           background-color: #007bff;
+//           color: #fff;
+//         }
+//       }
+//     }
+//   }
+// }
+
+/* Footer Section */
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+
+  .selected-date {
+    font-size: 0.95rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    .cancel,
+    .save {
+      flex: 1;
+      padding: 0.5rem;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .cancel {
+      background-color: $blueED;
+      margin-right: 0.5rem;
+
+      &:hover {
+        background-color: $primary;
+        color: $white;
+      }
+    }
+
+    .save {
+      background-color: $primary;
+      color: white;
+
+      &:hover {
+        background-color: $primary;
+      }
+
+      &:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+::ng-deep .responsive-modal {
+  width: 50vw;
+
+  @media (max-width: 768px) {
+    width: 95% !important;
+  }
+}
+
+
+
+/* Calendar Wrapper */
+.shivam {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+
+  > * {
+    width: 100%;
+  }
+
+  ::ng-deep .p-calendar {
+    width: 100%;
+    min-width: 320px;
+    max-width: 100%;
+    
+    .p-datepicker {
+      border: none;
+      box-shadow: none;
+      width: 100%;
+    }
+
+    .p-datepicker-calendar {
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      td {
+        padding: 0.3rem;
+        text-align: center;
+        margin-bottom: 1rem;
+
+        span {
+          display: block;
+          width: 2.2rem;
+          height: 2.2rem;
+          line-height: 2.2rem;
+          border-radius: 50%;
+          text-align: center;
+          transition: background-color 0.3s ease;
+          margin: auto;
+
+          &:hover {
+            background-color: #d3e5ff;
+          }
+        }
+
+        &.p-datepicker-today span {
+          font-weight: bold;
+          border: 1px solid #007bff;
+        }
+
+        &.p-highlight span {
+          background-color: #007bff;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  // 🔁 Responsive Fixes for small screens
+  @media (max-width: 768px) {
+    ::ng-deep .p-calendar {
+      .p-datepicker-calendar td span {
+        width: 2rem;
+        height: 2rem;
+        line-height: 2rem;
+        font-size: 0.85rem;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    ::ng-deep .p-calendar {
+      .p-datepicker-calendar td span {
+        width: 1.8rem;
+        height: 1.8rem;
+        line-height: 1.8rem;
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+
+
+
